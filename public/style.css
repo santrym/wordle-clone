@@ -191,7 +191,7 @@ body {
     animation: glow 1s ease-in-out infinite alternate;
   }
   
-  @-webkit-keyframes glow {
+  @keyframes glow {
     from {
       box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #3f6ed3, 0 0 4px #3f6ed3, 0 0 5px #3f6ed3, 0 0 6px #3f6ed3, 0 0 7px #3f6ed3;
     }
