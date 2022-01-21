@@ -201,3 +201,15 @@ body {
     }
   }
 
+
+
+
+  /* SIGNATURE */
+
+  #signatureDiv {
+      display: flex;
+  }
+
+  #signatureContentDiv {
+      margin: auto;
+  }
