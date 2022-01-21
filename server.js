@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-const PORT = '3002';
+var port = process.env.PORT || 3002;
 const app = express();
 
 app.use(express.static('public'));
@@ -13,8 +13,8 @@ app.get('', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log('App is running on PORT: ' + PORT);
+app.listen(port, () => {
+    console.log('App is running on PORT: ' + port);
 });
 
 
