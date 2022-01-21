@@ -8,13 +8,11 @@ app.use(express.static('public'));
 
 
 app.get('', (req, res) => {
-    console.log(path.join(__dirname, 'public/index.html'));
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile('index');
 });
 
 
 app.listen(port, () => {
     console.log('App is running on PORT: ' + port);
 });
-
 
