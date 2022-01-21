@@ -1,0 +1,203 @@
+
+:root {
+    --myGreen: rgb(144, 255, 140);
+    --myYellow: rgb(255, 255, 137);
+    --myGrey: rgb(104, 104, 104);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.game-row {
+    display: flex;
+}
+
+.game-cell {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 3px;
+    width: 50px;
+    /* width: 4em; */
+    height: 50px;
+    /* height: 4em; */
+    display: flex;
+    background-color: rgb(231, 231, 231);
+    font-size: 45px;
+}
+
+.cell-content {
+    margin: auto;
+}
+
+.keyboard-row {
+    display: flex;
+}
+
+.keyboard-row-container {
+    margin: auto;
+    display: flex;
+}
+
+.key {
+    border: 1px solid grey;
+    padding: 5px;
+    margin: 4px;
+    /* height: 40px; */
+    height: 4em;
+    /* width: 40px; */
+    width: 4em;
+    display: flex;
+    border-radius: 3px;
+}
+
+.key-content {
+    margin: auto;
+    font-size: 40px;
+}
+
+.enter-key {
+    width: 8em;
+}
+
+.back-key {
+    width: 6em;
+}
+
+.greeny {
+    background-color: var(--myGreen);
+}
+
+.greyed {
+    background-color: var(--myGrey);
+}
+
+.yellowed {
+    background-color: var(--myYellow);
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+}
+
+#outerContainer {
+    height: 90%;
+}
+
+#game-board {
+    /* border: 5px solid black; */
+    margin: auto;
+    width: 140px;
+    height: 60%;
+    display: flex;
+    border-radius: 10px;
+    /* background-color:rgb(167, 202, 255) */
+}
+
+#inner-board {
+    margin: auto auto;
+    width: 350px;
+    height: 385px;
+}
+
+#keyboard-container {
+    margin:auto;
+    margin-top: 80px;
+    max-width: 900px;
+    min-width: 500px;
+}
+
+#protectorDiv {
+    position: relative;
+    overflow: hidden;
+}
+
+#mainInput {
+    position: absolute;
+
+}
+
+
+
+/* MODAL RULES */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 50%;
+    border-radius: 10px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #modalZone {
+    display: flex;
+  }
+
+  #modalZoneText {
+      margin: auto;
+      font-size: 3em;
+  }
+
+
+
+
+
+  /* GLOW SHIZ */
+
+  .glow {
+    /* font-size: 45px; */
+    /* color: #fff; */
+    /* text-align: center; */
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #3f6ed3, 0 0 4px #3f6ed3, 0 0 5px #3f6ed3, 0 0 6px #3f6ed3, 0 0 7px #3f6ed3;
+    }
+    
+    to {
+      box-shadow: 0 0 2px #fff, 0 0 3px #9dbcff, 0 0 4px #9dbcff, 0 0 5px #9dbcff, 0 0 6px #9dbcff, 0 0 7px #9dbcff, 0 0 8px #9dbcff;
+    }
+  }
+

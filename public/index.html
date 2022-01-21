@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+
+        <title>wordle</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+
+        <div id="app" v-on:click="focuspocus()">
+
+            <div id="outerContainer" v-on:click="focuspocus()">
+
+                <h1>{{gameName}}</h1>
+
+                <div id="protectorDiv">
+                    <input type="text" v-on:keyup="logKey($event, false)" id="mainInput">
+                </div>
+
+                <div id="game-board">
+                    <div id="inner-board">
+                        <div id="row-1" class="game-row">
+                            <div class="game-cell"><div class="cell-content" id="cell-0"></div></div>
+                            <div class="game-cell"><div class="cell-content" id="cell-1"></div></div>
+                        </div>
+                        <div id="row-2" class="game-row">
+                            <div class="game-cell"><div class="cell-content" id="cell-2"></div></div>
+                            <div class="game-cell"><div class="cell-content" id="cell-3"></div></div>
+                        </div>
+                        <div id="row-3" class="game-row">
+                            <div class="game-cell"><div class="cell-content" id="cell-4"></div></div>
+                            <div class="game-cell"><div class="cell-content" id="cell-5"></div></div>
+                        </div>
+                        <div id="row-4" class="game-row">
+                            <div class="game-cell"><div class="cell-content" id="cell-6"></div></div>
+                            <div class="game-cell"><div class="cell-content" id="cell-7"></div></div>
+                        </div>
+                        <div id="row-5" class="game-row">
+                            <div class="game-cell"><div class="cell-content" id="cell-8"></div></div>
+                            <div class="game-cell"><div class="cell-content" id="cell-9"></div></div>
+                        </div>
+                        <div id="row-6" class="game-row">
+                            <div class="game-cell"><div class="cell-content" id="cell-10"></div></div>
+                            <div class="game-cell"><div class="cell-content" id="cell-11"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div id="keyboard-container">
+                    <div class="keyboard-row">
+                        <div class="keyboard-row-container">
+                            <div class="key" id="key-Q" v-on:click="logKey('Q', true)"><div class="key-content">Q</div></div>
+                            <div class="key" id="key-W" v-on:click="logKey('W', true)"><div class="key-content">W</div></div>
+                            <div class="key" id="key-E" v-on:click="logKey('E', true)"><div class="key-content">E</div></div>
+                            <div class="key" id="key-R" v-on:click="logKey('R', true)"><div class="key-content">R</div></div>
+                            <div class="key" id="key-T" v-on:click="logKey('T', true)"><div class="key-content">T</div></div>
+                            <div class="key" id="key-Y" v-on:click="logKey('Y', true)"><div class="key-content">Y</div></div>
+                            <div class="key" id="key-U" v-on:click="logKey('U', true)"><div class="key-content">U</div></div>
+                            <div class="key" id="key-I" v-on:click="logKey('I', true)"><div class="key-content">I</div></div>
+                            <div class="key" id="key-O" v-on:click="logKey('O', true)"><div class="key-content">O</div></div>
+                            <div class="key" id="key-P" v-on:click="logKey('P', true)"><div class="key-content">P</div></div>
+                        </div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div class="keyboard-row-container">
+                            <div class="key" id="key-A" v-on:click="logKey('A', true)"><div class="key-content">A</div></div>
+                            <div class="key" id="key-S" v-on:click="logKey('S', true)"><div class="key-content">S</div></div>
+                            <div class="key" id="key-D" v-on:click="logKey('D', true)"><div class="key-content">D</div></div>
+                            <div class="key" id="key-F" v-on:click="logKey('F', true)"><div class="key-content">F</div></div>
+                            <div class="key" id="key-G" v-on:click="logKey('G', true)"><div class="key-content">G</div></div>
+                            <div class="key" id="key-H" v-on:click="logKey('H', true)"><div class="key-content">H</div></div>
+                            <div class="key" id="key-J" v-on:click="logKey('J', true)"><div class="key-content">J</div></div>
+                            <div class="key" id="key-K" v-on:click="logKey('K', true)"><div class="key-content">K</div></div>
+                            <div class="key" id="key-L" v-on:click="logKey('L', true)"><div class="key-content">L</div></div>
+                        </div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div class="keyboard-row-container">
+                            <div class="key enter-key" v-on:click="logKey('Enter', true)"><div class="key-content">Enter</div></div>
+                            <div class="key" id="key-Z" v-on:click="logKey('Z', true)"><div class="key-content">Z</div></div>
+                            <div class="key" id="key-X" v-on:click="logKey('X', true)"><div class="key-content">X</div></div>
+                            <div class="key" id="key-C" v-on:click="logKey('C', true)"><div class="key-content">C</div></div>
+                            <div class="key" id="key-V" v-on:click="logKey('V', true)"><div class="key-content">V</div></div>
+                            <div class="key" id="key-B" v-on:click="logKey('B', true)"><div class="key-content">B</div></div>
+                            <div class="key" id="key-N" v-on:click="logKey('N', true)"><div class="key-content">N</div></div>
+                            <div class="key" id="key-M" v-on:click="logKey('M', true)"><div class="key-content">M</div></div>
+                            <div class="key back-key" v-on:click="logKey('Backspace', true)"><div class="key-content"><=</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalZone">
+                    <div id="modalZoneText">
+                        <p>Some text in the Modal..</p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+
+        <!-- <script src="https://unpkg.com/vue@3.0.5"></script> -->
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+        <script src="js/modals.js"></script>
+        
+    </body>
+</html>
