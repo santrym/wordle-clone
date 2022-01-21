@@ -1,7 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
-            gameName: 'Wordle',
+            gameName: '2 Letter Wordle',
             word: 'testerrrrr',
             correctLetters: [],
             guessedLetters: [],
